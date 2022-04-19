@@ -1,0 +1,28 @@
+ALGORITHM Dot product
+VAR
+    v1,v2:array_name : ARRAY_OF INTEGER[10];
+    i:INTEGER;
+BEGIN
+ FOR i FROM 0 TO v1.length-1 STEP 1  DO
+     read (v1[i]);
+     read (v2[i]);
+ END_FOR
+ IF (dot_product(v1,v2)=0) THEN
+     write("orthogonal ")
+ ELSE
+     write("no orthogonal")
+ END_IF
+END
+
+// function
+    FUNCTION dot_product(v1,v2:ARRAY_OF INTEGER) : INTEGER;
+    VAR
+      sum,i:INTEGER
+    BEGIN
+    sum:=0;
+        FOR i FROM 0 TO v1.length-1 STEP 1  DO
+       sum:=sum+v1[i]*v2[i]
+     
+        END_FOR
+        RETURN sum ;
+    END
